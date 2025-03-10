@@ -1,4 +1,4 @@
-const TvSeries = require("../models/tv_series.model");
+const TvSeries = require("../Models/tv_series.model");
 //Funciona para recuperar la coleccion de series
 const getTvSeries=async(req,res)=>{
     try {
