@@ -32,8 +32,13 @@ app.use('/api/tv_series',TvSeriesRoute);
 mongoose.connect('mongodb+srv://utp0159300:198703198703@cluster0.ttxxk.mongodb.net')
 .then(()=>{
     console.log('Conectado a la BD de manera exitosa');
-app.listen(3000,()=> {
-    console.log('Servidor respondio en el puerto 3000');
+    const PORT = process.env.PORT || 3000;  // Usa el puerto que Render asigna
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+
+//app.listen(3000,()=> {
+  //  console.log('Servidor respondio en el puerto 3000');
+//});
 })
 .catch(()=>console.log('Ocurrio un problema al conectar a la BD'))
