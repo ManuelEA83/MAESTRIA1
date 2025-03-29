@@ -1,15 +1,13 @@
 const TvSeries = require("../Models/tv_series.model");
 //Funciona para recuperar la coleccion de series
-const getTvSeries=async(req,res)=>{
+const getTvSeries = async (req, res) => {
     try {
-        const TvSerie= await TvSeries.find({});
-        res.status(200).json(TvSerie);
-    } catch(error) {
-        res.status(500).json({
-            status:"error:"+ error.message
-        });
+        const limit = parseInt(req.query.limit) || 10; // Si no se envía `limit`, obtiene 10 por defecto
+        const tvSeries = await TvSeries.find().limit(limit);
+        res.status(200).json(tvSeries);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener los datos' });
     }
-
 }
 
 // Función para recuperar una serie por _id
