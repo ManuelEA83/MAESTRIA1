@@ -83,5 +83,5 @@ const TvSeriesSchema = new mongoose.Schema({
 });
 
 // Exportando el modelo
-const TvSeries = mongoose.model('TvSeries', TvSeriesSchema,'tv_series');
+const TvSeries = mongoose.model('TvSeries', TvSeriesSchema);
 module.exports = TvSeries;
