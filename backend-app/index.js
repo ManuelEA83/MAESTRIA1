@@ -27,7 +27,7 @@ app.use('/api/tv_series',TvSeriesRoute);
 
 //Definiendo la conexion a BD a travex de mongoose
 //La definicion a BD es de tipo promesa
-mongoose.connect('mongodb+srv://utp0159300:198703198703@cluster0.ttxxk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"')
+mongoose.connect('mongodb+srv://utp0159300:198703198703@cluster0.ttxxk.mongodb.net/series_tv?retryWrites=true&w=majority&appName=Cluster0')
 .then(()=>{
     console.log('Conectado a la BD de manera exitosa');
     const PORT = process.env.PORT || 3000;  // Usa el puerto que Render asigna
