@@ -3,6 +3,16 @@ const express = require('express');
 //invocacion de la libreria mongoose para la conexion a BD de mongodb 
 const mongoose = require('mongoose');
 // Importar las rutas de la coleccion  Tvseries
+//
+const TvSeriesSchema = new mongoose.Schema({
+    title: String,
+    genre: String,
+    year: Number,
+});
+
+// Especifica el nombre exacto de la colección como tercer parámetro
+module.exports = mongoose.model('TvSeries', TvSeriesSchema, 'series_tv');
+//
 const TvSeriesRoute = require('./routes/tv_series.route');
 
 
