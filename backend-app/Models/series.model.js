@@ -114,6 +114,6 @@ const TvSeriesSchema = new mongoose.Schema({
     }
 });
 
-const TvSeries = mongoose.model('TvSeries', TvSeriesSchema);
+const TvSeries = mongoose.model('TvSeries', TvSeriesSchema,'series_tv');
 
 module.exports = TvSeries;
